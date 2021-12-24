@@ -16,7 +16,7 @@ class Item(BaseModel):
     output_path: str
 
 @app.get('/')
-@app.post('/compress_and_convert_image/')
+@app.post('/compress_and_convert_image/', status_code=200)
 async def create_item(item:Item):
     item_dict = item.dict()
     a = item_dict['image_path']
